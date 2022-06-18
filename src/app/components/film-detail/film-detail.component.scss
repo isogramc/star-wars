@@ -1,0 +1,33 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 8px 0;
+  font-family: STARWARS;
+  color: #3F3F3F;
+  text-transform: uppercase;
+}
+
+.content{
+  display: flex;
+  padding: 0 16px;
+  max-width: 960px;
+  flex-direction: row;
+}
+
+.content-right{
+  width: 50%;
+}
+
+.content-left{
+  width: 50%;
+  padding-right: 30px;
+}
+
+ul{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}

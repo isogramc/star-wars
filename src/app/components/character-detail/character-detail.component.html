@@ -1,0 +1,30 @@
+<div class="my-space">
+<h1>{{character?.name}}</h1>
+<div class="content">
+    <h2>Details</h2>
+  <div>
+    <div>Birth Year:<span>{{character?.birth_year}}</span></div>
+    <div>Homeworld:
+      <span><a href="/planet/{{planetNum}}">{{planet?.name}}</a></span>
+    </div>
+  </div>
+  <div>
+    <div>Gender:<span>{{character?.gender}}</span></div>
+    <div>Height:<span>{{character?.height}}</span></div>
+    <div>Mass:<span>{{character?.mass}}</span></div>
+    <div>Hair Color:<span>{{character?.hair_color}}</span></div>
+    <div>Skin Colour:<span>{{character?.skin_color}}</span></div>
+    <div>Eye Colour:<span>{{character?.eye_color}}</span></div>
+  </div>
+  <div>
+    Films: {{character?.films?.length}}
+    <div>
+      <ul>
+      <li *ngFor="let film of character?.films | film; let index=index">
+        <a href="/film/{{film.id}}">{{film.name}}</a>
+      </li>
+    </ul>
+    </div>
+  </div>
+</div>
+</div>

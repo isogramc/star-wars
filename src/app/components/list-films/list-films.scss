@@ -1,0 +1,109 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: STARWARS, serif;
+  text-transform: uppercase;
+  padding-top: 15px;
+  color: #3F3F3F;
+  text-align: left;
+}
+
+table {
+  margin: 0;
+  border-collapse: collapse;
+  thead{
+    th {
+      border: 1px solid black;
+    }
+  }
+  tbody {
+    td {
+      border: 1px solid black;
+    }
+  }
+}
+
+table tr td:first-child a {
+  text-decoration: none;
+  color: #3E7CF4;
+}
+
+table tr td span {
+  display: none;
+}
+
+.table th{
+  background-color: rgba(0, 0, 0, 0.05);
+  text-align: left;
+}
+
+.table, th, td {
+  padding: 16px;
+}
+
+.table > tfoot, .table > tfoot > tr > td{
+  vertical-align: center;
+  text-align: center;
+}
+
+@media (max-width: 700px){
+  table tr th{
+    border:0;
+    display: none;
+  }
+  table tr td {
+    border: 0;
+    display: block;
+  }
+  .table tr:first-child, .table tr td:first-child{
+    border:0;
+  }
+  .table tr{
+    border-top: 0;
+    border-bottom: 1px solid black;
+    padding-bottom: 20px;
+  }
+  .table, th, td {
+    padding: 8px;
+    border: 0;
+  }
+  table tr td:first-child {
+    border: 0;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  table tr td span {
+    display: inline-block;
+    font-weight: bold;
+    padding-right: 3px;
+  }
+}
+
+ul li {
+  list-style: none;
+  position: relative;
+  padding: 25px;
+}
+
+ul.card > li + li {
+  margin-top: 10px;
+}
+
+ul.card > li {
+  border-bottom: 1px red solid;
+}
+
+li.heart::before {
+  content: "\2764";
+  position: absolute;
+  left: 2px;
+  top: 5px;
+  width: 3px;
+  height: 6px;
+  border: solid #f9dd94;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}

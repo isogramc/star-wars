@@ -1,0 +1,21 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 8px 0;
+  font-family: STARWARS;
+  color: #3F3F3F;
+  text-transform: uppercase;
+}
+
+.my-space{
+  padding-top: 2em;
+}
+
+.content{
+  display: flex;
+  max-width: 960px;
+  flex-direction: column;
+}
