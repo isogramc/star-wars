@@ -4,7 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## The Brief
 
-Here are a couple of links you will need to accomplish this assignment:
+Links used to accomplish this assignment:
 
 [Star Wars API](https://swapi.dev/)
 
@@ -16,46 +16,47 @@ Here are a couple of links you will need to accomplish this assignment:
 This application displays the following pages:
 
 
-Film listing page
+1. Film listing page
 
-Film detail page
+2. Film detail page
 
-Character detail page
+3. Character detail page
 
-An additional listing page of your choice
+4. An additional listing page of your choice
 
-An additional detail page of your choice
+5. An additional detail page of your choice
 
 
 For 4 and 5, choose from any of the following API resources: planets, species, starships or vehicles. Create a listing and detail page for your resource, just like you did for 1 and 2. On the details page, show a list of films in which the item starred, and link back to the films detail page.
 
-
-Write a unit test for the film listing page.
-
-Interactions
-The Star Wars header text links to the films listing page.
-
-Clicking on a row in any listing page, navigates to the corresponding detail page.
-
-Clicking on the character name in the film detail page, navigates to the character detail page.
-
-Clicking on the film link on your chosen detail page, navigates to the film details page.
-
-Features
-Listing pages should be paginatable, using whatever paging size the SWAPI returns.
-
-Pages should be responsive, as indicated in the Figma design.
-
-Tech Stack
-We would like to challenge you a bit, and see some Angular and TypeScript skills, so stick to those.
+*I chose planets and this links to a planets detail page*
 
 
-Try your best to avoid using any CSS frameworks, we'd like to see you roll your own stylesheets.
+###Write a unit test for the film listing page.
+The unit tests have been created.
 
+###Interactions
+ - [x] The Star Wars header text links to the films listing page.
 
-Commit your code to a Git service, GitLab, GitHub or BitBucket, the choice is yours.
+ - [x] Clicking on a row in any listing page, navigates to the corresponding detail page.
 
-Time Limit
+ - [x] Clicking on the character name in the film detail page, navigates to the character detail page.
+
+ - [x] Clicking on the film link on your chosen detail page, navigates to the film details page.
+
+###Features
+- [x] Listing pages should be paginatable, using whatever paging size the SWAPI returns.
+
+- [x] Pages should be responsive, as indicated in the Figma design.
+
+###Tech Stack
+- [x] We would like to challenge you a bit, and see some Angular and TypeScript skills, so stick to those.
+
+- [x] Try your best to avoid using any CSS frameworks, we'd like to see you roll your own stylesheets.
+
+- [x] Commit your code to a Git service, GitLab, GitHub or BitBucket, the choice is yours.
+
+###Time Limit
 Not everybody works at the same pace, or even with the same technique. We'd like you to estimate how long you think the assignment will take you, and let us know up front. A couple of days, and perhaps a weekend should be enough.
 
 ## Development server
