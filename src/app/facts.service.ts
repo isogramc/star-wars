@@ -6,6 +6,13 @@ import IFilm from "./types/typings";
 import ICharacter from "./types/typings";
 import IPlanet from "./types/typings";
 
+export default interface IPlanets{
+  count: number,
+  next: string,
+  previous: null,
+  results: IPlanet[]
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -13,7 +20,6 @@ export class FactsService {
   constructor(
     private http: HttpClient
   ) {}
-
 
   getFilms():Observable<IFilms> {
     return this.http.get<IFilms>('https://swapi.dev/api/films');
@@ -27,7 +33,16 @@ export class FactsService {
     return this.http.get<ICharacter>(`https://swapi.dev/api/people/${id}`);
   }
 
+  getPlanets(url: string): Observable<IPlanets> {
+    console.log('inService', url);
+    return this.http.get<IPlanets>(`${url}`);
+  }
+
   getPlanet(url: string):  Observable<IPlanet> {
     return this.http.get<IPlanet>(`${url}`);
+  }
+
+  getPlanetDetail(id: string):  Observable<IPlanet> {
+    return this.http.get<IPlanet>(`https://swapi.dev/api/planets/${id}`);
   }
 }

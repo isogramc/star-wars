@@ -46,16 +46,14 @@ export class CharacterDetailComponent implements OnInit {
     )
   }
 
-  ngOnInit(): void {}
-
-  ngAfterContentInit(){
+  ngOnInit(): void {
     this.id = this.activatedRoute.snapshot.paramMap.get('id');
     if(this.id){
       this.getCharacter(this.id);
     }
   }
 
-  ngOnDestroy() {
+  ngOnDestroy(): void {
     this.subscription.unsubscribe();
     this.subscription2.unsubscribe();
   }

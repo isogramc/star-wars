@@ -29,16 +29,14 @@ export class FilmDetailComponent implements OnInit {
     )
   }
 
-  ngOnInit(): void {}
-
-  ngAfterContentInit(){
+  ngOnInit(): void {
     this.id = this.activatedRoute.snapshot.paramMap.get('id');
     if(this.id){
       this.getFilm(this.id);
     }
   }
 
-  ngOnDestroy() {
+  ngOnDestroy(): void {
     this.subscription.unsubscribe();
   }
 

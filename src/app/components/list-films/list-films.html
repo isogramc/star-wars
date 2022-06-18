@@ -1,5 +1,5 @@
 <h1>Films</h1>
-<table class="table">
+<table class="table" id="films-table">
   <thead>
   <tr>
     <th>Movie</th>
@@ -9,7 +9,7 @@
   </tr>
   </thead>
   <tbody>
-  <tr *ngFor="let film of films | films; let index=index">
+  <tr *ngFor="let film of films | films; let index=index" [attr.data-index]="index" (click)="navigateTo(index)">
     <td><a href="/film/{{index+1}}">{{film.title}}</a></td>
     <td><span class="sml-label">Director:</span>{{film.director}}</td>
     <td><span class="sml-label">Producer:</span>{{film.producer}}</td>
@@ -19,7 +19,6 @@
   <tfoot>
   <tr>
     <td colspan="4">
-      <button (click)="getFilms()">Previous</button><button (click)="getFilms()">Next</button>
       Page <span>{{page}}</span> of <span>{{numberOfRecords}}</span> total results
     </td>
   </tr>

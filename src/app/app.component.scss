@@ -40,9 +40,9 @@ p {
   font-weight: 600;
 }
 
-.toolbar span.text {
+.toolbar div.text {
   font-family: STARWARS;
-  padding-left: 1em;
+  padding-left: 15px;
   padding-top: 8px;
   font-size: 3em;
   color: #FFE81F;
@@ -75,6 +75,10 @@ p {
   max-width: 960px;
   flex-direction: column;
   align-items: center;
+}
+
+.main{
+  padding-bottom: 10em;
 }
 
 svg.material-icons {

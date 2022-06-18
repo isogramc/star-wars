@@ -1,6 +1,7 @@
 .header-nav{
   width: 100%;
   display: flex;
+  align-items: center;
   background-color: #CCCCCC;
   position: absolute;
   top: 0;
@@ -9,18 +10,16 @@
   height: 25px;
   padding: 7px;
   margin-top: 60px;
-}
-
-.header-nav a{
-  align-items: center;
-  padding: 20px 7px;
-  line-height: 28px;
-}
-
-.header-nav .selected a {
-  background-color: #d6e6f7;
-}
-
-.header-nav .selected a:hover {
-  background-color: #bdd7f5;
+  a{
+    padding: 20px 7px;
+    line-height: 20px;
+    text-decoration: none;
+    color: black;
+    font-weight: normal;
+  }
+  .active{
+    padding: 11px;
+    background: white;
+    font-weight: bold;
+  }
 }

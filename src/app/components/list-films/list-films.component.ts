@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FactsService } from '../../facts.service';
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-list-films',
@@ -9,6 +10,8 @@ import { FactsService } from '../../facts.service';
 export class ListFilmsComponent implements OnInit {
 
   constructor(
+    private route: ActivatedRoute,
+    private router: Router,
     private factsService: FactsService
   ) {}
 
@@ -17,7 +20,7 @@ export class ListFilmsComponent implements OnInit {
   page: number = 1;
   numberOfRecords: number = 0;
 
-  getFilms() {
+  getFilms(): void {
        this.subscription = this.factsService.getFilms().subscribe(
       data => {
         this.films = data;
@@ -28,13 +31,15 @@ export class ListFilmsComponent implements OnInit {
     );
   }
 
-  ngOnInit(): void { }
-
-  ngAfterContentInit(){
+  ngOnInit(): void {
     this.getFilms();
   }
 
-  ngOnDestroy() {
+  navigateTo(index: number){
+    this.router.navigate([`/film/${index+1}`], {});
+  }
+
+  ngOnDestroy(): void {
     this.subscription.unsubscribe();
   }
 

@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { FilmDetailComponent } from './film-detail.component';
+import {AppComponent} from "../../app.component";
 
 describe('FilmDetailComponent', () => {
   let component: FilmDetailComponent;
@@ -21,5 +22,12 @@ describe('FilmDetailComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should render title', () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    fixture.detectChanges();
+    const compiled = fixture.nativeElement;
+    expect(compiled.querySelector('h1').textContent).toContain('Films');
   });
 });

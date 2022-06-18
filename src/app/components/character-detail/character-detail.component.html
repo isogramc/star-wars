@@ -17,7 +17,7 @@
     <div>Eye Colour:<span>{{character?.eye_color}}</span></div>
   </div>
   <div>
-    Films: {{character?.films?.length}}
+    <h2>Films: {{character?.films?.length}}</h2>
     <div>
       <ul>
       <li *ngFor="let film of character?.films | film; let index=index">

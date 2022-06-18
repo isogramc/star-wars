@@ -16,16 +16,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'cat-quotes'`, () => {
+  it(`should have as title 'Star Wars Films App'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('cat-quotes');
+    expect(app.title).toEqual('Star Wars Films App');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('cat-quotes app is running!');
+    expect(compiled.querySelector('.toolbar.text').textContent).toContain('Star Wars');
   });
 });

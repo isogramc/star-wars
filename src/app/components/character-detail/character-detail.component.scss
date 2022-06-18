@@ -10,12 +10,19 @@ h6 {
   text-transform: uppercase;
 }
 
-.my-space{
-  padding-top: 2em;
+ul{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
-.content{
-  display: flex;
-  max-width: 960px;
-  flex-direction: column;
+.my-space{
+  padding-top: 2em;
+  .content{
+    display: flex;
+    max-width: 960px;
+    flex-direction: column;
+  }
 }
+
+

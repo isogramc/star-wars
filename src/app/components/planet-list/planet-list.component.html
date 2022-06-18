@@ -1,1 +1,30 @@
-<p>planet-list works!</p>
+<h1>Planets</h1>
+<table class="table">
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Climate</th>
+    <th>Diameter</th>
+    <th>Terrain</th>
+    <th>Population</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let planet of planets; let index=index;" [attr.data-index]="index" (click)="navigateTo(index)">
+    <td><a href="/planet/{{formatURL(planet.url)}}">{{planet?.name}}</a></td>
+    <td><span class="sml-label">Climate:</span>{{planet?.climate}}</td>
+    <td><span class="sml-label">Diameter:</span>{{planet?.diameter}}</td>
+    <td><span class="sml-label">Terrain:</span>{{planet?.terrain}}</td>
+    <td><span class="sml-label">Population:</span>{{planet?.population}}</td>
+  </tr>
+  </tbody>
+  <tfoot>
+  <tr>
+    <td colspan="4">
+      <button (click)="changePage(prevUrl)" >Previous</button><button (click)="changePage(nextUrl)">Next</button>
+      Page <span>{{page}}</span> of <span>{{numberOfRecords}}</span> total results
+    </td>
+  </tr>
+  </tfoot>
+</table>
+

@@ -13,7 +13,7 @@ Here are a couple of links you will need to accomplish this assignment:
 [Star Wars Font](https://www.fontspace.com/starjedi-special-edition-font-f9644)
 
 
-We would like you to challenge you to use the Star Wars API (SWAPI) to build an application that displays the following pages:
+This application displays the following pages:
 
 
 Film listing page
