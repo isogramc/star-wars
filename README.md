@@ -29,13 +29,13 @@ This application displays the following pages:
 
 For 4 and 5, choose from any of the following API resources: planets, species, starships or vehicles. Create a listing and detail page for your resource, just like you did for 1 and 2. On the details page, show a list of films in which the item starred, and link back to the films detail page.
 
-*I chose planets and this links to a planets detail page*
+- [x] *I chose planets and this links to a planets detail page*
 
 
-###Write a unit test for the film listing page.
+### Write a unit test for the film listing page.
 The unit tests have been created.
 
-###Interactions
+### Interactions
  - [x] The Star Wars header text links to the films listing page.
 
  - [x] Clicking on a row in any listing page, navigates to the corresponding detail page.
@@ -44,19 +44,19 @@ The unit tests have been created.
 
  - [x] Clicking on the film link on your chosen detail page, navigates to the film details page.
 
-###Features
+### Features
 - [x] Listing pages should be paginatable, using whatever paging size the SWAPI returns.
 
 - [x] Pages should be responsive, as indicated in the Figma design.
 
-###Tech Stack
+### Tech Stack
 - [x] We would like to challenge you a bit, and see some Angular and TypeScript skills, so stick to those.
 
 - [x] Try your best to avoid using any CSS frameworks, we'd like to see you roll your own stylesheets.
 
 - [x] Commit your code to a Git service, GitLab, GitHub or BitBucket, the choice is yours.
 
-###Time Limit
+### Time Limit
 Not everybody works at the same pace, or even with the same technique. We'd like you to estimate how long you think the assignment will take you, and let us know up front. A couple of days, and perhaps a weekend should be enough.
 
 ## Development server

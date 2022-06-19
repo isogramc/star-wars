@@ -17,6 +17,7 @@ export class PlanetListComponent implements OnInit {
 
   planets: any | undefined;
   subscription: any;
+  cachedData: string | null = localStorage.getItem('planets');
   page: number = 1;
   numberOfRecords: number = 0;
   baseUrl: string = 'https://swapi.dev/api/planets';
@@ -28,6 +29,7 @@ export class PlanetListComponent implements OnInit {
     if(url===undefined){url=this.baseUrl;}
     this.subscription = this.factsService.getPlanets(url).subscribe(
       data => {
+        localStorage.setItem("planets", JSON.stringify(data));
         this.planets = data.results;
         this.numberOfRecords = Number(data.count);
         this.nextUrl = data.next;
@@ -48,7 +50,25 @@ export class PlanetListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getPlanets(this.baseUrl);
+    if(this.cachedData) {
+      this.checkCachedData();
+    }else{
+      this.getPlanets(this.baseUrl);
+      this.page = 1;
+    }
+  }
+
+  checkCachedData():void{
+    if(this.cachedData) {
+      let parsedCachedData = JSON.parse(this.cachedData);
+      this.planets = parsedCachedData.results;
+      this.numberOfRecords = Number(parsedCachedData.count);
+      this.nextUrl = parsedCachedData.next;
+      this.prevUrl = parsedCachedData.previous;
+      if(this.nextUrl){
+        this.page = (Number(this.nextUrl.split("=")[1])-1);
+      }
+    }
   }
 
   navigateTo(index: number){
