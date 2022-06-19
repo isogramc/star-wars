@@ -75,8 +75,10 @@ export class PlanetListComponent implements OnInit {
     this.router.navigate([`/planet/${index+1}`], {});
   }
 
-  ngOnDestroy() {
-    this.subscription.unsubscribe();
+  ngOnDestroy(): void {
+    if(this.subscription){
+      this.subscription.unsubscribe();
+    }
   }
 
 }

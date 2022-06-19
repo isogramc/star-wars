@@ -17,6 +17,7 @@ export class ListFilmsComponent implements OnInit {
 
   films: any | undefined;
   subscription: any;
+  cachedData: string | null = localStorage.getItem('films');
   page: number = 1;
   numberOfRecords: number = 0;
 
@@ -33,14 +34,16 @@ export class ListFilmsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.checkCachedData();
-    this.getFilms();
+    if(this.cachedData) {
+      this.checkCachedData();
+    }else{
+      this.getFilms();
+    }
   }
 
   checkCachedData():void{
-    let cachedData = localStorage.getItem('films');
-    if(cachedData){
-      let parsedCachedData = JSON.parse(cachedData);
+    if(this.cachedData){
+      let parsedCachedData = JSON.parse(this.cachedData);
       this.films = parsedCachedData;
       this.numberOfRecords = Number(parsedCachedData.count);
     }
@@ -51,7 +54,9 @@ export class ListFilmsComponent implements OnInit {
   }
 
   ngOnDestroy(): void {
-    this.subscription.unsubscribe();
+    if(this.subscription){
+      this.subscription.unsubscribe();
+    }
   }
 
 }
