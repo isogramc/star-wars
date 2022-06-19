@@ -45,6 +45,9 @@ export class PlanetListComponent implements OnInit {
   }
 
   changePage(url: string){
+    if(this.subscription){
+      this.subscription.unsubscribe();
+    }
     this.getPlanets(url)
     this.page = Number(url.split("=")[1]);
   }
