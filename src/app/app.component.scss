@@ -304,15 +304,20 @@ svg#clouds {
     margin-left: 72px;
   }
 
-  svg#rocket-smoke {
-    right: 120px;
-    transform: rotate(-5deg);
+  .my-space {
+    .content-wrap {
+      display: flex;
+      flex-direction: column;
+
+      .content-right {
+        width: 100%;
+      }
+
+      .content-left {
+        width: 100%;
+      }
+    }
   }
+
 }
 
-@media screen and (max-width: 575px) {
-  svg#rocket-smoke {
-    display: none;
-    visibility: hidden;
-  }
-}

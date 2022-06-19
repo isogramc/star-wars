@@ -16,6 +16,7 @@ export class PlanetDetailComponent implements OnInit {
   planet: IPlanet | undefined;
   subscription: any;
   id: string | null = "";
+  loading: boolean = false;
 
   formatTime(timestamp: any) {
     if(timestamp){
@@ -33,6 +34,7 @@ export class PlanetDetailComponent implements OnInit {
     this.subscription = this.factsService.getPlanetDetail(id).subscribe(
       data => {
         this.planet = data;
+        this.loading = false;
         this.subscription.unsubscribe();
       },
       err => console.error(err), () => console.log('get Planet Detail completed')
@@ -40,6 +42,7 @@ export class PlanetDetailComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.loading = true;
     this.id = this.activatedRoute.snapshot.paramMap.get('id');
     if(this.id){
       this.getPlanetDetail(this.id);

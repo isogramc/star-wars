@@ -1,6 +1,6 @@
 <div class="my-space">
-<h1>{{character?.name}}</h1>
-<div class="content">
+  <h1><span *ngIf="loading">Character: </span>{{character?.name}}</h1>
+<div class="content" *ngIf="!loading">
     <h2>Details</h2>
   <div>
     <div>Birth Year:<span>{{character?.birth_year}}</span></div>
@@ -16,7 +16,7 @@
     <div>Skin Colour:<span>{{character?.skin_color}}</span></div>
     <div>Eye Colour:<span>{{character?.eye_color}}</span></div>
   </div>
-  <div>
+  <div *ngIf="!loading">
     <h2>Films: {{character?.films?.length}}</h2>
     <div>
       <ul>
@@ -28,3 +28,4 @@
   </div>
 </div>
 </div>
+<div *ngIf="loading"><app-loader></app-loader></div>

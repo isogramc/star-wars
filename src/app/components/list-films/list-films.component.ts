@@ -20,6 +20,7 @@ export class ListFilmsComponent implements OnInit {
   cachedData: string | null = localStorage.getItem('films');
   page: number = 1;
   numberOfRecords: number = 0;
+  loading: boolean = false;
 
   getFilms(): void {
        this.subscription = this.factsService.getFilms().subscribe(
@@ -28,12 +29,14 @@ export class ListFilmsComponent implements OnInit {
         localStorage.setItem("films", JSON.stringify(data));
         this.numberOfRecords = Number(data.count);
         this.subscription.unsubscribe();
+        this.loading = false;
         },
       err => console.error(err), () => console.log('get Films List completed')
     );
   }
 
   ngOnInit(): void {
+    this.loading = true;
     if(this.cachedData) {
       this.checkCachedData();
     }else{

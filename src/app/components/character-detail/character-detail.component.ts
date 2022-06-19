@@ -20,6 +20,7 @@ export class CharacterDetailComponent implements OnInit {
   homeworld: string = "";
   planet: any;
   planetNum: string = "";
+  loading: boolean = false;
 
   getCharacter(id: string){
     this.subscription = this.factsService.getCharacter(id).subscribe(
@@ -40,6 +41,7 @@ export class CharacterDetailComponent implements OnInit {
     this.subscription2 = this.factsService.getPlanet(url).subscribe(data => {
         this.planet = data;
         console.log(this.planet);
+        this.loading = false;
         this.subscription2.unsubscribe();
       },
       err => console.error(err), () => console.log('get Character Detail completed')
@@ -47,6 +49,7 @@ export class CharacterDetailComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.loading = true;
     this.id = this.activatedRoute.snapshot.paramMap.get('id');
     if(this.id){
       this.getCharacter(this.id);

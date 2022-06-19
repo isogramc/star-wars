@@ -16,6 +16,7 @@ import { PlanetListComponent } from './components/planet-list/planet-list.compon
 import { PlanetDetailComponent } from './components/planet-detail/planet-detail.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { LoaderComponent } from './components/loader/loader.component';
 
 const routes: Routes = [
   {path:'', redirectTo: '/films', pathMatch:'full'},
@@ -40,7 +41,8 @@ const routes: Routes = [
     PlanetListComponent,
     PlanetDetailComponent,
     MenuComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    LoaderComponent
   ],
   imports: [
     BrowserModule,

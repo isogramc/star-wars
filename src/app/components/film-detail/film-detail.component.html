@@ -1,6 +1,6 @@
 <div class="my-space">
-<h1>{{film?.title}}</h1>
-<div class="content">
+  <h1><span *ngIf="loading">Film</span>{{film?.title}}</h1>
+<div class="content-wrap" *ngIf="!loading">
   <div class="content-left">
     {{film?.opening_crawl}}
   </div>
@@ -9,14 +9,17 @@
       <div>Director:<span>{{film?.director}}</span></div>
       <div>Producer:<span>{{film?.producer}}</span></div>
       <div>Release Date:<span>{{film?.release_date}}</span></div>
-    <div class="my-space">
-      <h2>Characters</h2>
+    <div class="my-space" *ngIf="!loading">
+      <h2>{{film?.characters?.length}} Characters</h2>
       <ul>
         <li *ngFor="let person of film?.characters | characters; let index=index">
-          <a href="/character/{{person.id}}">{{person.name}}</a>
+          <a href="/character/{{person.id}}" id="link-{{index+1}}">
+            <span>{{person.name}}</span>
+          </a>
         </li>
       </ul>
     </div>
   </div>
 </div>
 </div>
+<div *ngIf="loading"><app-loader></app-loader></div>

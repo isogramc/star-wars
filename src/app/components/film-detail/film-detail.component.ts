@@ -18,11 +18,13 @@ export class FilmDetailComponent implements OnInit {
   film: IFilm | undefined;
   subscription: any;
   id: string | null = "";
+  loading: boolean = false;
 
   getFilm(id: string) {
     this.subscription = this.factsService.getFilm(id).subscribe(
       data => {
         this.film = data;
+        this.loading = false;
         this.subscription.unsubscribe();
       },
       err => console.error(err), () => console.log('get Film Detail completed')
@@ -30,6 +32,7 @@ export class FilmDetailComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.loading = true;
     this.id = this.activatedRoute.snapshot.paramMap.get('id');
     if(this.id){
       this.getFilm(this.id);

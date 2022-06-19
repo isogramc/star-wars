@@ -16,25 +16,6 @@ ul{
   padding: 0;
 }
 
-.my-space {
-  padding-top: 2em;
-
-  .content {
-    display: flex;
-    padding: 0 16px;
-    max-width: 960px;
-    flex-direction: row;
-
-    .content-right {
-      width: 50%;
-    }
-
-    .content-left {
-      width: 50%;
-      padding-right: 30px;
-    }
-  }
-}
 
 
 
